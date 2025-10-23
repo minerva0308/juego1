@@ -1,12 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-     <link rel="stylesheet" href="./css/estilos css">
-    <title>puzzle</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pelotita Roja Mejorada - Aventura con Rebote</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="board"></div>
-    <script src="./js/codigos.js"></script>
+  <div class="moon"></div>
+  <div class="container">
+    <div class="controls">
+      <button class="theme-btn" onclick="changeMode('rain')">🌧️ Lluvia</button>
+      <button class="theme-btn" onclick="changeMode('night')">🌙 Oscuro</button>
+      <button class="theme-btn" onclick="changeMode('snow')">❄️ Hielo</button>
+      <div class="stat-item">Modo Actual: <span id="modeDisplay">🌧️ Lluvia</span></div>
+    </div>
+    <h1>🔴 Pelotita Roja Mejorada</h1>
+    <div class="level-info">
+      📊 Nivel: <span id="level">1</span> | 🚀 Velocidad: <span id="speedLevel">1x</span>
+    </div>
+    <div class="info">
+      <strong>Controles:</strong> ⬅️ Izquierda | ➡️ Derecha | ⬆️ Saltar<br>
+      🪜 Sube escaleras 📍 Esquiva obstáculos ⚠️ Si chocas, presiona ESPACIO
+    </div>
+    <canvas id="gameCanvas" width="900" height="500"></canvas>
+    <div class="stats">
+      <div class="stat-item">Distancia: <span id="score">0</span></div>
+      <div class="stat-item">Multiplicador: <span id="multiplier">x1.0</span></div>
+      <div class="stat-item">Puntuación: <span id="finalPoints">0</span></div>
+    </div>
+  </div>
+
+  <div class="game-over" id="gameOverScreen">
+    <h2>💥 ¡CHOCASTE!</h2>
+    <p>Nivel alcanzado: <span id="levelReached">1</span></p>
+    <p id="finalScore">Puntuación Final: 0</p>
+    <button onclick="restartGame()">Presiona ESPACIO o haz clic para reiniciar</button>
+  </div>
+
+  <script src="js/app.js"></script>
+
 </body>
 </html>
